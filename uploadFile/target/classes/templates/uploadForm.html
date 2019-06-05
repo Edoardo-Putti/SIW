@@ -1,0 +1,61 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
+
+<body>
+
+	<div th:if="${message}">
+		<h2 th:text="${message}" />
+	</div>
+
+	<div class="container">
+		<h4>Select files from your computer</h4>
+		<form method="POST" enctype="multipart/form-data" action="/">
+			<div class="form-inline">
+				<div class="form-group files">
+					<input type="file" id="input-file-now" class="file-upload"
+						name="file" />
+				</div>
+				<input type="submit" value="Upload" />
+			</div>
+
+			<h4>Or drag and drop files below</h4>
+			<div class="panel panel-info">
+            <div class="panel-heading">File Upload Form</div>
+            <div class="panel-body">
+                <div class="dropzone"></div>
+					<input type="drop zone" id="input-file" class="upload-drop-zone" name="file"  />
+                <div class="dropzone2"></div>
+            </div>
+        </div>
+			<div class="dropzone" id="drop-zone">
+				Just drag and drop files here <input type="file" id="input-file"
+					class="upload-drop-zone" name="file"  />
+			</div>
+		</form>
+	</div>
+
+	<div>
+		<ul>
+			<li th:each="file : ${files}"><a th:href="${file}"
+				th:text="${file}" /></li>
+		</ul>
+	</div>
+
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+
+
+</body>
+</html>
