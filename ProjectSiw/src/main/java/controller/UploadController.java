@@ -47,8 +47,9 @@ public class UploadController {
 
         return "redirect:/uploadStatus";
     }*/
+ 
     @PostMapping("/upload")
-    public String multiFileUpload(@RequestParam("file") MultipartFile[] files, RedirectAttributes redirectAttributes) {
+    public String multiFileUpload(@RequestParam( "file") MultipartFile[] files, RedirectAttributes redirectAttributes) {
     	for(MultipartFile file : files) {
     		if (file.isEmpty()) {
                 redirectAttributes.addFlashAttribute("message", "Please select a file to upload");

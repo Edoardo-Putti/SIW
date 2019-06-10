@@ -21,11 +21,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .authorizeRequests()
                 .antMatchers("/", "/index").permitAll()
                 .antMatchers("/images/**").permitAll()
-                .antMatchers(HttpMethod.GET,"/uploaded/**").hasRole("USER")
-                .antMatchers(HttpMethod.POST,"/uploaded/**").hasRole("USER")
-                .antMatchers(HttpMethod.PATCH,"/uploaded/**").hasRole("USER")
-                .antMatchers(HttpMethod.POST,"/upload").hasRole("USER")
-                .antMatchers(HttpMethod.POST,"/folder").hasRole("USER")
+                .antMatchers(HttpMethod.GET,"/uploaded/**").permitAll()
+                .antMatchers(HttpMethod.PUT,"/uploaded/**").permitAll()
+                .antMatchers(HttpMethod.POST,"/uploaded/**").permitAll()
+                .antMatchers(HttpMethod.POST,"/templates/**").permitAll()
+                .antMatchers(HttpMethod.PATCH,"/uploaded/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
@@ -33,10 +33,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
             .logout()
-                .permitAll();
-   
+                .permitAll()
+                .and()
+             .csrf()
+             	.disable();       	  
     }
-
+    
+  
     @Bean
     @Override
     public UserDetailsService userDetailsService() {
@@ -49,4 +52,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         return new InMemoryUserDetailsManager(user);
     }
+    
+    
 }
