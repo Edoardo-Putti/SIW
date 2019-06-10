@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<style type="text/css">
+body{
+	font-family: Arial;
+	font-size: 10pt;
+}
+
+#dropSection {
+	height: 300px;
+	width: 600px;
+	background-color: skyblue;
+}
+
+#btnUpload {
+	display: none;
+}
+
+.active {
+	background-color: darkgreen !important;	
+}
+</style>
+<body>
+
+<h1>Spring Boot file upload example</h1>
+
+<form method="POST" action="/upload" enctype="multipart/form-data">
+    <input type="file" id="dropSection" name="file" multiple="multiple"/><br/><br/>
+    <input type="submit" value="Submit" />
+</form>
+
+<a href="/folder" th:href="@{/folder}"  class="text-white">Create folder</a>
+</body>
+</html>

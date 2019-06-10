@@ -3,6 +3,7 @@ package com.example.demo;
 //import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -20,6 +21,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .authorizeRequests()
                 .antMatchers("/", "/index").permitAll()
                 .antMatchers("/images/**").permitAll()
+                .antMatchers(HttpMethod.GET,"/uploaded/**").hasRole("USER")
+                .antMatchers(HttpMethod.POST,"/uploaded/**").hasRole("USER")
+                .antMatchers(HttpMethod.PATCH,"/uploaded/**").hasRole("USER")
+                .antMatchers(HttpMethod.POST,"/upload").hasRole("USER")
+                .antMatchers(HttpMethod.POST,"/folder").hasRole("USER")
                 .anyRequest().authenticated()
                 .and()
             .formLogin()
@@ -28,6 +34,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
             .logout()
                 .permitAll();
+   
     }
 
     @Bean
