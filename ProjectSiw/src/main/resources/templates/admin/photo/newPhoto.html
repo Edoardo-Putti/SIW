@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js"
+            integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+    <style type="text/css">
+		body{
+			font-family: Arial;
+			font-size: 10pt;
+		}
+		
+		#dropSection {
+			height: 300px;
+			width: 600px;
+			background-color: skyblue;
+		}
+		
+		#btnUpload {
+			display: none;
+		}
+		
+		.active {
+			background-color: darkgreen !important;	
+		}
+	</style>
+</head>
+<body>
+    <div th:replace="admin/fragments/header :: header"></div>
+    <div class='content'>
+        <h4>Carica una nuova foto</h4>
+        <form method="post" th:action="@{/admin/photo/new}" enctype="multipart/form-data">
+		    <input type="file" id="dropSection" name="image" class="file-input" multiple="multiple"/>
+            <table>
+                <tr>
+                    <td>Fotografo: </td>
+                    <td>
+                    	<select name="photographer">
+                    		<th:block th:each="photographer : ${photographers}">
+ 								<option th:value="${photographer.id}" th:text="${photographer.name}+ ' ' + ${photographer.surname}"></option>
+                    		</th:block>
+                    	</select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Upload</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

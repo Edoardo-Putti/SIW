@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel='stylesheet' href='/css/style.css' />
+    <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js"
+            integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+    <div th:replace="admin/fragments/header :: header"></div>
+    <div class='content'>
+        <h4>Album creato con successo!</h4>
+            <table>
+            	<tr>
+	                <td><a href="/admin/album/new"><button>Aggiungi un nuovo album</button></a></td>
+	            </tr>
+                <tr>
+                    <td>Nome: </td>
+                    <td th:text="${album.name}"></td>
+                </tr>
+	            <tr>
+                    <td>Foto: </td>
+                </tr>
+            </table>
+     	    <th:block th:each="photo : ${album.photos}">
+	          	<div class='img-box' th:style="'background:url(\'/photo/' + ${photo.id} + '.' + ${photo.extension} + '\');background-size: contain;background-position: center;background-repeat: no-repeat;'"></div>
+	        </th:block>
+    </div>
+</body>
+</html>

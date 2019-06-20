@@ -1,0 +1,24 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+	<head>
+    	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel='stylesheet' href='/css/style.css' />
+		<script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js"
+		integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1"
+		crossorigin="anonymous"></script>
+		<script src="https://code.jquery.com/jquery-3.4.1.js"
+		integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+		crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div th:replace="fragments/header :: header"></div>
+		<div class='content'>
+			<h4>Fotografi</h4>
+			<table>
+				<tr th:each="photographer : ${photographers}">
+					<td><a th:href="@{/catalog/photographer/} + ${photographer.id}" th:text="${photographer.name} + ' ' + ${photographer.surname}"></a></td>
+				</tr>
+			</table>
+		</div>
+		<div th:replace="fragments/cartclosed :: cart"></div>
+	</body>
+</html>

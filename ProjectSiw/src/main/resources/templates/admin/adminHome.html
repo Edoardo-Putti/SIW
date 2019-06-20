@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org"
+	xmlns="http://www.w3.org/1999/html">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel='stylesheet' href='/css/style.css' />    
+    <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js"
+            integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1"
+            crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"></script>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div th:replace="admin/fragments/header :: header"></div>
+		<div class='content'>
+			<a href="/admin/photo/new">
+				<div class="homebutton">
+					<div class="icon"><i class="fas fa-camera-retro fa-w-14 fa-3x"></i></div>
+					<div class="name">Nuova Foto</div>
+				</div>
+			</a>
+			<a href="/admin/album/new">
+				<div class="homebutton">
+					<div class="icon"><i class="fas fa-journal-whills fa-w-14 fa-3x"></i></div>
+					<div class="name">Nuovo Album</div>
+				</div>
+			</a>
+			<a href="/admin/photographer/new">
+				<div class="homebutton">
+					<div class="icon"><i class="fas fa-users fa-w-14 fa-3x"></i></div>
+					<div class="name"> Nuovo Fotografo</div>
+				</div>
+			</a>
+			
+		</div>
+</body>
+</html>
