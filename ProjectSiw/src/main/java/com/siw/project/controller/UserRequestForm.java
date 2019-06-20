@@ -87,7 +87,7 @@ public class UserRequestForm {
 			Customer customer = new Customer();
 			customer.setFirstName((String) user.getAttributes().get("given_name"));
 			customer.setLastName((String) user.getAttributes().get("family_name"));
-			customer.setEmail((String) user.getAttributes().get("email"));
+			customer.setMail((String) user.getAttributes().get("email"));
 
 			BindingResult customerBindingResult = new BindException(customer, "Customer");
 			this.customerValidator.validate(customer, customerBindingResult);
