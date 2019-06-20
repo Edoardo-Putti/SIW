@@ -18,16 +18,7 @@ public class Customer {
 
 	private String mail;
 
-	private UsageRequest usageRequest;
 	
-	
-	public UsageRequest getUsageRequest() {
-		return usageRequest;
-	}
-
-	public void setUsageRequest(UsageRequest usageRequest) {
-		this.usageRequest = usageRequest;
-	}
 
 	public long getId() {
 		return id;
