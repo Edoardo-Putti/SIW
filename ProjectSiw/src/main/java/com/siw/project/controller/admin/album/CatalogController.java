@@ -1,4 +1,4 @@
-package com.siw.project.controller.admin;
+package com.siw.project.controller.admin.album;
 
 import java.util.List;
 import java.util.Set;

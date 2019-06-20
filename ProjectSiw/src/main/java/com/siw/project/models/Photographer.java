@@ -17,6 +17,16 @@ public class Photographer {
 	
 	private String name;
 	
+	private String surname;
+	
+	public String getSurname() {
+		return surname;
+	}
+
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+
 	@OneToMany(mappedBy="photographer")
 	private List<Photo> photos;
 

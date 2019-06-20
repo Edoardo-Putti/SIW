@@ -16,7 +16,18 @@ public class Customer {
 	
 	private String lastName;
 
-	private String email;
+	private String mail;
+
+	private UsageRequest usageRequest;
+	
+	
+	public UsageRequest getUsageRequest() {
+		return usageRequest;
+	}
+
+	public void setUsageRequest(UsageRequest usageRequest) {
+		this.usageRequest = usageRequest;
+	}
 
 	public long getId() {
 		return id;
@@ -42,13 +53,14 @@ public class Customer {
 		this.lastName = lastName;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getMail() {
+		return mail;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setMail(String mail) {
+		this.mail = mail;
 	}
+
 	
 	
 }

@@ -1,4 +1,4 @@
-package com.siw.project.controller.admin;
+package com.siw.project.controller.admin.album;
 
 import java.util.HashSet;
 import java.util.Optional;
