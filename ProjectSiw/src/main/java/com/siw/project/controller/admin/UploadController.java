@@ -17,8 +17,8 @@ import org.springframework.web.multipart.MultipartFile;
 import com.siw.project.controller.validator.PhotoValidator;
 import com.siw.project.models.Photo;
 import com.siw.project.models.Photographer;
-import com.siw.project.sevices.PhotoService;
-import com.siw.project.sevices.PhotographerService;
+import com.siw.project.services.PhotoService;
+import com.siw.project.services.PhotographerService;
 
 @Controller
 public class UploadController {

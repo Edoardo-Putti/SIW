@@ -15,8 +15,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.siw.project.models.Album;
 import com.siw.project.models.Photo;
-import com.siw.project.sevices.AlbumService;
-import com.siw.project.sevices.CartService;
+import com.siw.project.services.AlbumService;
+import com.siw.project.services.CartService;
 
 @Controller
 public class AlbumsController {

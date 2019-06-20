@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.siw.project.controller.validator.PhotographerValidator;
 import com.siw.project.models.Photographer;
-import com.siw.project.sevices.PhotographerService;
+import com.siw.project.services.PhotographerService;
 
 @Controller
 public class PhotographerController {

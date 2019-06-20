@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.siw.project.controller.validator.AlbumValidator;
 import com.siw.project.models.Album;
 import com.siw.project.models.Photo;
-import com.siw.project.sevices.AlbumService;
-import com.siw.project.sevices.PhotoService;
+import com.siw.project.services.AlbumService;
+import com.siw.project.services.PhotoService;
 
 @Controller
 public class AlbumController {

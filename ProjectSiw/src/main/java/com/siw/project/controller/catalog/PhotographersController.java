@@ -14,8 +14,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.siw.project.models.Photo;
 import com.siw.project.models.Photographer;
-import com.siw.project.sevices.CartService;
-import com.siw.project.sevices.PhotographerService;
+import com.siw.project.services.CartService;
+import com.siw.project.services.PhotographerService;
 
 @Controller
 public class PhotographersController {

@@ -23,10 +23,10 @@ import com.siw.project.controller.validator.UsageRequestValidator;
 import com.siw.project.models.Customer;
 import com.siw.project.models.Photo;
 import com.siw.project.models.UsageRequest;
-import com.siw.project.sevices.CartService;
-import com.siw.project.sevices.CustomerService;
-import com.siw.project.sevices.PhotoService;
-import com.siw.project.sevices.UsageRequestService;
+import com.siw.project.services.CartService;
+import com.siw.project.services.CustomerService;
+import com.siw.project.services.PhotoService;
+import com.siw.project.services.UsageRequestService;
 
 @Controller
 public class UserRequestForm {

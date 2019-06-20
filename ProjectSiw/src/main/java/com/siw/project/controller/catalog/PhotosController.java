@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.siw.project.models.Photo;
-import com.siw.project.sevices.CartService;
-import com.siw.project.sevices.PhotoService;
+import com.siw.project.services.CartService;
+import com.siw.project.services.PhotoService;
 
 @Controller
 public class PhotosController {
