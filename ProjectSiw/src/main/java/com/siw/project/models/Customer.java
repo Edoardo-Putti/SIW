@@ -16,9 +16,7 @@ public class Customer {
 	
 	private String lastName;
 
-	private String mail;
-
-	
+	private String mail;	
 
 	public long getId() {
 		return id;
